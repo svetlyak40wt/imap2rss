@@ -1,0 +1,11 @@
+("quicklisp" .
+ (:class qlot.source.ql:source-ql-all
+  :initargs (:distribution "http://beta.quicklisp.org/dist/quicklisp.txt" :%version :latest)
+  :version "2018-08-31"))
+("ubiquitous" .
+ (:class qlot.source.github:source-github
+  :initargs (:project-name "ubiquitous" :repos "Shinmera/ubiquitous" :ref "88f611b8eab9395b34373bb27f8947e633b86cd0" :branch nil :tag nil)
+  :version "github-88f611b8eab9395b34373bb27f8947e633b86cd0"
+  :repos "Shinmera/ubiquitous"
+  :url "https://github.com/Shinmera/ubiquitous/archive/88f611b8eab9395b34373bb27f8947e633b86cd0.tar.gz"
+  :ref "88f611b8eab9395b34373bb27f8947e633b86cd0"))

@@ -1,0 +1,30 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  #+quicklisp(ql:quickload '(defmain
+                             imap2rss/main)
+                           :silent t))
+
+(defpackage :ros.script.imap2rss
+  (:use :cl
+        :defmain))
+(in-package :ros.script.imap2rss)
+
+
+(defmain main (host
+               user
+               password
+               filename
+               (folder "IMAP Folder to take emails from"
+                       :default "Inbox")
+               (limit "Maximum number of emails in the feed."
+                      :default 100))
+
+  (imap2rss/main:main host user password
+                      :feed-filename filename
+                      :limit limit
+                      :folder folder))

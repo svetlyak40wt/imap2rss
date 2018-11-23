@@ -1,0 +1,4 @@
+ql :all :latest
+
+# Fixed for package inferred systems
+github ubiquitous Shinmera/ubiquitous :ref 88f611b8eab9395b34373bb27f8947e633b86cd0
